@@ -34,7 +34,7 @@ const (
 func New(cfg aws.Config) (e Env, err error) {
 
 	// Force Singapore
-	// TO DO - replace that with an environment specific variable.
+	// TO DO - replace AWS region with an environment specific variable.
 	cfg.Region = endpoints.ApSoutheast1RegionID
 	log.Debugf("Env Region: %s", cfg.Region)
 
@@ -52,7 +52,6 @@ func New(cfg aws.Config) (e Env, err error) {
 	e.AccountID = aws.StringValue(result.Account)
 	log.Infof("Account ID: %s", result.Account)
 
-	// TO DO: review this: make sure that STAGE is a variable we have in the AWS parameter store
 	stage := e.GetSecret("STAGE")
 
 	switch stage {

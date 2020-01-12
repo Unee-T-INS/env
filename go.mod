@@ -1,3 +1,4 @@
+// This is a hard coded variable that needs to be replaced.
 module github.com/unee-t-ins/env
 
 go 1.12

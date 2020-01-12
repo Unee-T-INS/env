@@ -34,6 +34,7 @@ const (
 func New(cfg aws.Config) (e Env, err error) {
 
 	// Force Singapore
+	// TO DO - replace AWS region with an environment specific variable.
 	cfg.Region = endpoints.ApSoutheast1RegionID
 	log.Debugf("Env Region: %s", cfg.Region)
 
